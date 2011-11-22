@@ -30,7 +30,7 @@ YUI_config = {
 					requires: [
 						'model-list',
 						'cache-offline',
-						'page'
+						'pagebuilder-page'
 					]
 				},
 				'grid-view': {
@@ -38,7 +38,7 @@ YUI_config = {
                     requires: [ 'handlebars'
                               , 'node-style'
                               , 'node-screen'
-                              , 'formats'
+                              , 'pagebuilder-pages'
                               , 'view'
                               ]
                 },

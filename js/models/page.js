@@ -6,9 +6,8 @@ Y.Page = Y.Base.create('pagebuilder-page', Y.Model, [], {
 	
 }, {
 	ATTRS: {
-		name: {},
-		description: {},
-		
+		title: {},
+		description: {}
 	}
 });
 

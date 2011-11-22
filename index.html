@@ -34,26 +34,14 @@
     <div id="main"></div>
   </div>
   
-  <div id="elements-container">
-      <ul id="elements">
-          <li class="element"><div>Hello there: <input type="textbox"></div></li>
-          <li class="element">Item #2</li>
-          <li class="element">Item #3</li>
-          <li class="element">Item #4</li>
-          <li class="element">Item #5</li>
-      </ul>
-  </div>
-  
   <script src="http://yui.ericf.me/?/yui/yui-min.js"></script>
   <!-- <script src="http://yui.antonychan.net/yui3/build/yui/yui-min.js"></script> -->
-  <script src="js/yui-config.js?323423423423987987213"></script>
+  <script src="js/config.js"></script>
   
   <script>
+  YUI().use('pagebuilder', function (Y) {
 
-  // Load YUI and start PhotosNearMe App.
-  YUI().use('richmedia-portal', function (Y) {
-
-      new Y.RichMediaPortal({
+      new Y.PageBuilder({
           container    : '#wrap',
           viewContainer: '#main'
       });

@@ -1,6 +1,6 @@
 YUI.add('pagebuilder', function (Y) {
 
-Y.RichMediaPortal = Y.Base.create('pagebuilder', Y.App, [], {
+Y.PageBuilder = Y.Base.create('pagebuilder', Y.App, [], {
 
 	templates: {
 		//grid: Y.Handlebars.compile(Y.one('#grid-template').getContent())
@@ -19,7 +19,17 @@ Y.RichMediaPortal = Y.Base.create('pagebuilder', Y.App, [], {
 	},
 	
 	handleIndex: function(){
-	
+		var pages = this.get('pages');
+		
+		pages.load(function(err, data){
+			console.log(data.item(0).get("title"));
+		});
+		console.log(pages);
+
+		this.showView('grid', {modelList: pages}, function (gridView) {
+			console.log('calling reset!');
+            //gridView.reset();
+        });
 	}
 
 }, {
@@ -38,7 +48,7 @@ Y.RichMediaPortal = Y.Base.create('pagebuilder', Y.App, [], {
 	requires: [
 		'app-base',
 		'handlebars',
-		'pages',
-		'page'
+		'pagebuilder-pages',
+		'pagebuilder-page'
 	]
 });
