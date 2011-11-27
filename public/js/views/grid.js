@@ -1,6 +1,10 @@
 YUI.add('grid-view', function (Y) {
 
 Y.GridView = Y.Base.create('gridView', Y.View, [], {
+	
+	events: {
+		'li': {click: 'selected'}
+	},
 
 	initializer: function (config) {
 		console.log('initializing gridView');
@@ -11,16 +15,35 @@ Y.GridView = Y.Base.create('gridView', Y.View, [], {
 	render: function (){
 		console.log("rendering grid");
 		var container = this.get('container'),
-			pages = this.get('modelList');		
+			pages = this.get('modelList'),
+			anim = new Y.Anim({
+				node: container,
+			        to: {
+			            height: 0,
+			            width: 0
+			        }
+			}),
+			expandTimer,
+			width = 0,
+			height= 0 ;
+				
+		//container.setStyle('height', height+"px");	
+		//container.setStyle('width', width+"px");
+		//container.setStyle('backgroundColor', "black");
 		
 		container.setContent(function(){
 			var html = '';
 			pages.each(function(item){
-				html += "<li>"+item.get("title")+"</li>";
+				html += "<li><a href='ghandi'>"+item.get("title")+"</a></li>";
 			});
-		
 			return html;
 		}());
+		//anim.run();
+	},
+	
+	selected: function(){
+		console.log("holla");
+		//this.navigate('/photo/' + 'ficl' + '/');
 	}
    
 });
@@ -31,5 +54,6 @@ Y.GridView = Y.Base.create('gridView', Y.View, [], {
               , 'node-screen'
               , 'pages'
               , 'view'
+			  , 'anim'
               ]
 });

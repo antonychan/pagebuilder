@@ -40,6 +40,7 @@ YUI_config = {
                               , 'node-screen'
                               , 'pagebuilder-pages'
                               , 'view'
+							  , 'anim'
                               ]
                 },
 				'pagebuilder': {

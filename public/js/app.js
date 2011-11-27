@@ -38,7 +38,8 @@ Y.PageBuilder = Y.Base.create('pagebuilder', Y.App, [], {
 		pages: {value: new Y.Pages},
 		routes: {
 			value: [
-				{path: '*', callback: 'handleIndex'}
+				{path: '*', callback: 'handleIndex'},
+				{path: '/ghandi', callback: 'showDetails'}
 			]
 		}
 	}
